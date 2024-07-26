@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<link rel="stylesheet" type="text/css" href="SpencerSamStylesheet.css">
+		<title>Making a Wood Sword</title>
+			<meta charset="UTF-8">
+			<meta name="description" content="Wood Sword">
+			 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta name="keywords" content="woodworking, sword, wood sword">
+			<meta name="author" content="Sam Spencer">
+	</head>
+<body>
+<nav>
+	<ul class= "topnav">
+	<li class= "topnav"><a href="spencersamassignment8.html">Home</a></li>
+	<li class= "topnav"><a href="finishing.html">Finishing</a></li>
+	<li class= "topnav"><a href="tools.html">Tools</a></li>
+	<li class= "topnav"><a href="form.html">Calculator</a></li>
+	<li class= "topnav"><a href="order.html">Order Form</a></li>
+	</ul>
+</nav>
+<header>
+<h1>Wood Calculator</h1>
+<p> Below is a handy guide to figuring out approximate cost and how much wood you need to buy for the entire project. If you play around with the types of wood, you will find huge disparities in cost. My suggestion is to use Pine at first, for practice, before moving to the more expensive woods. Pine (or any softwood) is generally cheaper and easy to work with, making it the perfect medium to get the process down before dropping some real money on the nicer stuff. The form is a rough estimate, and you may find a wide disparity between your local prices, and this calculator. Lastly, remember when you take the total board lenth you will need, it will not account for cuts. You will need more to account for cut-offs and scrap. When you shop for the wood, measure each piece against the board you intend to use for that piece, to ensure you don't have to take the extra trip of shame to the home improvement store of your choice.
+</p>
+<hr>
+</header>
+<form id="woodForm">
+    <label for="bladelength">Length of Blade (inches, measured from tip to bottom of the tang):</label>
+    <input type="number" id="bladelength" name="bladelength" required>
+	<br><br>
+
+    <label for="bladewidth">Width of Blade (inches, measured at the thickest part of the blade):</label>
+    <input type="number" id="bladewidth" name="bladewidth" required>
+	<br><br>
+
+    <label for="crossguard">Length of Cross-guard (inches, measured across):</label>
+    <input type="number" id="crossguard" name="crossguard" required>
+	<br><br>
+	
+	<label for="handle">Length of Handle (inches, measured from top of handle to the bottom):</label>
+    <input type="number" id="handle" name="handle" required>
+	<br><br>
+
+    <label for="woodType">Type of Wood:</label>
+    <select id="woodType" name="woodType" required>
+		<option value="" disabled selected hidden>Select wood type...</option>
+        <option value="pine">Pine</option>
+        <option value="oak">Oak</option>
+        <option value="maple">Maple</option>
+        <option value="cherry">Cherry</option>
+    </select>
+	<br><br>
+
+    <button type="submit">Calculate</button>
+    </form>
+	
+<div id="results">
+<h2>Results</h2>
+    <p id="totalWood"></p>
+    <p id="estimatedCost"></p>
+</div>
+<script>
+    const form = document.getElementById('woodForm');
+    const totalWoodOutput = document.getElementById('totalWood');
+    const estimatedCostOutput = document.getElementById('estimatedCost');
+    form.addEventListener('submit', function(event) {
+    event.preventDefault();
+	
+    const bladelength = parseFloat(document.getElementById('bladelength').value);
+    const bladewidth = parseFloat(document.getElementById('bladewidth').value);
+    const crossguard = parseFloat(document.getElementById('crossguard').value);
+	const handle = parseFloat(document.getElementById('handle').value);
+    const woodType = document.getElementById('woodType').value;
+
+    const totalWoodLength = bladelength + bladewidth + (crossguard *3) + (handle * 3);
+
+    let costPerUnit;
+        switch (woodType) {
+            case 'pine':
+                costPerUnit = 0.33;
+                break;
+            case 'oak':
+                costPerUnit = 5.00;
+                break;
+            case 'maple':
+                costPerUnit = 8.00;
+                break;
+            case 'cherry':
+                costPerUnit = 6.99;
+                break;
+            default:
+                costPerUnit = 0;
+            }
+    const estimatedCost = (totalWoodLength / 12) * 1.25 * costPerUnit;
+        totalWoodOutput.textContent = `Total length of wood required: ${totalWoodLength.toFixed(2)} inches`;
+        estimatedCostOutput.textContent = `Estimated cost: $${estimatedCost.toFixed(2)} (includes additional 25% buffer for cutting)`;
+        });
+    </script>
+	</body>
+	</html>

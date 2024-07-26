@@ -1,0 +1,229 @@
+body {
+	background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url("images/wood.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	 line-height: 1.6;
+            margin: 0;
+            padding: 0;
+}
+
+h1 {
+	font-size: 3.75rem;
+	text-decoration:underline;
+	text-shadow: 2px 5px 6px black;
+}
+
+h2 {
+	font-size: 2.5rem;
+	text-align: center;
+}
+
+h3 {
+	color: red;
+	font-style:italic;
+}
+
+h4 {
+	font-size: 1.25rem;
+	text-decoration: underline;
+	display: block;
+	margin-bottom: .6rem;
+	text-align: center;
+}
+
+p {
+	font-size: 1.25rem;
+	margin: 2.5rem;
+}
+
+img {
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: 2px 2px 10px black;
+	border-radius: 8px;
+}
+
+aside {
+    width: 25%;
+    padding: 20px;
+}
+
+ul.topnav {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: saddlebrown;
+	box-shadow: 2px 2px 8px;
+	text-align: center;
+}
+
+li.topnav {
+	display: inline-block;
+	border: 1px solid black;
+}
+
+
+li.topnav a {display: inline-block;
+	color: black;
+	font-size: 1.25rem;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+li.topnav a:hover {
+	background-color: peachpuff
+}
+
+.spin {
+	display: block;
+	margin: 0 auto;
+	margin-top: 5px;
+	width: 200px;
+	height: 266px;
+}
+
+.spin:hover {
+    animation: spin 6s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100%{
+	  transform:rotate(360deg);
+}
+}
+
+section {
+	padding: 10px 10px 10px 10px;
+	border: 2px solid black;
+	box-shadow: 0px 0px 20px black;
+	margin: 1.25rem;
+}
+
+.content {
+    display: flex;
+	align-items: center;
+    margin: 1.25rem;
+}
+
+
+.text h4 {
+    font-size: 20px;
+    margin-top: 0;
+	text-align: center;
+}
+
+.img-left {
+    float: left;
+    margin-right: 20px;
+    max-width: 60%;
+}
+
+.img-right {
+    float: right;
+    margin-left: 20px;
+    max-width: 40%;
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .img-left,
+    .img-right {
+        margin: 0 auto 20px; 
+        order: 0; 
+    }
+}
+
+ul.centerlist {
+    list-style-position: inside; 
+    font-size: 1.25rem; 
+	padding-left: 0;
+}
+
+ul.centerlist li {
+    font-size: 1.25rem; 
+    display: list-item; 
+    text-align: center; 
+	margin-left: 1.25rem;
+	margin-bottom: 5px;
+}
+
+
+.button {
+	background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("images/Woodbuttons.jfif");
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	color: black;
+	border: 2px solid black;
+    border-radius: 4px;
+}
+
+.button a {
+	text-decoration: none;
+	color: black
+}
+
+.button:hover {
+	background-image: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url("images/Woodbuttons.jfif");
+	font-weight: bold;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+      
+input[type=text], input[type=email], input[type=tel], input[type=color], input[type=url], input[type=range], select, textarea {
+    width: 70%;
+    padding: 5px;
+	margin-top: 5px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+  #div1 #div2{
+	float: left;
+    width: 500px;
+    height: 470px;
+    padding: 10px;
+  }
+
+  #div1 img {
+    box-shadow: none;
+    border-radius: 0px;
+  }
+  
+fieldset {
+	background: #ffe6cc;
+	border-radius: 5px;
+	box-shadow: 0px 0px 20px black;
+	margin: 20px;
+	margin-right: 50%;
+}
+
+legend {
+	font-weight: bold;
+	font-size: 25px;
+	padding: 5px 10px;
+}
+
+footer {
+    clear: both;
+    text-align: center;
+    padding: 20px;
+}
+

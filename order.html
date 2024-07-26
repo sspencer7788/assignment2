@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<link rel="stylesheet" type="text/css" href="SpencerSamStylesheet.css">
+		<title>Making a Wood Sword</title>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta name="description" content="Wood Sword">
+			<meta name="keywords" content="woodworking, sword, wood sword">
+			<meta name="author" content="Sam Spencer">
+	</head>
+<body>
+<nav>
+	<ul class= "topnav">
+	<li class= "topnav"><a href="spencersamassignment8.html">Home</a></li>
+	<li class= "topnav"><a href="finishing.html">Finishing</a></li>
+	<li class= "topnav"><a href="tools.html">Tools</a></li>
+	<li class= "topnav"><a href="form.html">Calculator</a></li>
+	<li class= "topnav"><a href="order.html">Order Form</a></li>
+	</ul>
+</nav>
+<h1>Custom Sword Order Form</h1>
+<form autocomplete="on">
+	<fieldset>
+		<legend>Personal Information:</legend>
+			First Name:<br>
+				<input required autofocus type="text" name="firstname" maxlength="20"><br>
+			Last Name:<br>
+				<input required type="text" name="lastname" maxlength="25">
+			<br><br>
+			Date of Birth:<br>
+				<input required type="date" name="dob">
+			<br><br>
+			Email Address:<br>
+				<input required type="email" name="email" pattern="^.+@.+$">
+			<br><br>
+			Phone Number:<br>
+				<input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-123-1234">
+	</fieldset>
+	<fieldset>
+		<legend>Details:</legend>
+			Pick your colors:
+			<br>
+			Blade:
+				<input type="color" id="color">
+			<br>
+			Cross-guard:
+				<input type="color" id="ccolor">
+			<br>
+			Handle:
+				<input type="color" id="hcolor">
+			<br>
+			Hilt:
+				<input type="color" id="hhcolor">
+			<br><br>
+			Which wood would you like?<br>
+			<input type="checkbox" id="Pine" name="Pine" value="Pine">
+				Pine
+			<br>
+			<input type="checkbox" id="Oak" name="Oak" value="Oak">
+				Oak
+			<br>
+			<input type="checkbox" id="Maple" name="Maple" value="Maple">
+				Maple
+			<br>
+			<input type="checkbox" id="Cherry" name="Cherry" value="Cherry">
+				Cherry
+			<br><br>
+			Input a link to a sword you would like yours to resemble (optional):<br>
+				<input type="url" id="ref" pattern="https?://.+">
+			<br><br>
+			What is your budget ($350 min):
+				<input type="range" name="budget" min="350" max="1000" value="350" oninput="updateBudgetValue(this.value)">
+				<output for="budget" id="budgetValue">$350</output>
+					<script>
+						function updateBudgetValue(val) {
+							document.getElementById('budgetValue').textContent = '$' + val;
+						}
+					</script>
+	</fieldset>
+	<fieldset>
+		<legend>Payment Details:</legend>
+			Are you paying with Card?<br>
+				<input type="radio" name="Yes/no" value="yes">Yes
+				<input type="radio" name="Yes/no" value="no">No<br>
+			<br>
+			Card Number:<br>
+				<input required type="text" name="cardnumber" maxlength="16"><br>
+			Card exp date:<br>
+				<input required type="month" name="cardexp"><br>
+			Card CVC:<br>
+				<input required type="text" name="cvc" maxlength="3">
+			<br><br>
+			Billing Address:<br>
+				<input required type="text" name="baddress"><br>
+				<input type="text" name="baddress1"><br>
+				<input type="text" name="baddress2"><br>
+				<input type="text" name="baddress3"><br>
+			<br><br><br>
+	</fieldset>
+	<fieldset>
+		<legend>Shipping Info:</legend>
+			Shipping Address:<br>
+				<input required type="text" name="address"><br>
+				<input type="text" name="address1"><br>
+				<input type="text" name="address2"><br>
+				<input type="text" name="address3"><br>
+			<br>
+			Select Delivery Option:<br>
+				<select required name="delivery">
+					<option value="" disabled selected hidden>Select Delivery Option</option>
+					<option value="next day">Next day delivery - $20</option>
+					<option value="3-day">3-day delivery - $10</option>
+					<option value="standard">Standard delivery - $3 (7-10 business days)</option>
+				</select>
+	</fieldset>
+			<br><br>
+			Special Requests:<br>
+				<textarea name="comments" rows="12" cols="40">
+				</textarea>
+			<br><br>
+			<input type="reset" value="Reset">
+			<button type="submit" formaction="http://ss1.ciwcertified.com/cgi-bin/process.pl">Submit Form</button>
+</form>
+</body>
+</html>
